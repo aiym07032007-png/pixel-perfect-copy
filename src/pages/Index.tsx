@@ -1,6 +1,7 @@
 import StickyNav from "@/components/StickyNav";
 import HeroSection from "@/components/HeroSection";
 import StatsSection from "@/components/StatsSection";
+import WorldMapSection from "@/components/WorldMapSection";
 import PhenomenonSection from "@/components/PhenomenonSection";
 import PriceSection from "@/components/PriceSection";
 import DangerSection from "@/components/DangerSection";
