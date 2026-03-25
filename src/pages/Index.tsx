@@ -16,6 +16,7 @@ const Index = () => (
     <StickyNav />
     <HeroSection />
     <StatsSection />
+    <WorldMapSection />
     <PhenomenonSection />
     <PriceSection />
     <DangerSection />
