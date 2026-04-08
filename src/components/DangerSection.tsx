@@ -26,7 +26,6 @@ const FlipCard = ({ color, bgColor, emoji, zone, tagline, items, delay }: FlipCa
       style={{ minHeight: 400 }}
     >
       <div className="flip-card-inner relative w-full" style={{ minHeight: 400 }}>
-        {/* Front */}
         <div className="flip-card-front absolute inset-0 bg-card rounded-xl border border-border flex flex-col items-center justify-center p-6">
           <div className={`w-20 h-20 rounded-full flex items-center justify-center text-4xl mb-4 ${bgColor}`}>
             {emoji}
@@ -35,8 +34,6 @@ const FlipCard = ({ color, bgColor, emoji, zone, tagline, items, delay }: FlipCa
           <p className="text-muted-foreground text-center text-sm">{tagline}</p>
           <p className="text-xs text-muted-foreground mt-4">↻ Нажмите, чтобы перевернуть</p>
         </div>
-
-        {/* Back */}
         <div className="flip-card-back absolute inset-0 bg-card rounded-xl border border-border p-5 overflow-y-auto">
           <h4 className={`font-heading text-base font-bold mb-3 ${color}`}>{emoji} {zone}</h4>
           <div className="space-y-3">
@@ -60,60 +57,50 @@ const DangerSection = () => {
   return (
     <section id="danger" className="py-20 sm:py-28">
       <div className="section-container">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="section-title text-center"
+          className="text-center mb-12"
         >
-          <span className="text-gradient-gold">СВЕТОФОР ОПАСНОСТИ</span>
-          <br />
-          <span className="text-foreground text-2xl">ХИМИЧЕСКИЙ РАЗБОР</span>
-        </motion.h2>
+          <p className="text-destructive text-sm tracking-[0.3em] uppercase font-body font-semibold mb-4">
+            ГЛАВА VI · ХИМИЯ
+          </p>
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
+            СВЕТОФОР ОПАСНОСТИ
+          </h2>
+        </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6 mb-16">
           <FlipCard
-            emoji="🟢"
-            zone="ЗЕЛЁНАЯ ЗОНА"
-            tagline="Условно безопасные"
-            color="text-success"
-            bgColor="bg-success/20"
-            delay={0}
+            emoji="🟢" zone="ЗЕЛЁНАЯ ЗОНА" tagline="Условно безопасные"
+            color="text-success" bgColor="bg-success/20" delay={0}
             items={[
-              { icon: "✅", title: "Витамин D3 (1000–2000 МЕ)", desc: "Холекальциферол + масляная основа. Риск минимален при соблюдении доз. ⚠️ Но сначала — анализ крови." },
-              { icon: "✅", title: "Витамины группы B", desc: "Водорастворимые. Излишки выводятся почками. «Дорогая моча» — буквально. ⚠️ B1 и B6 взаимно разрушают друг друга." },
-              { icon: "✅", title: "Витамин C", desc: "При дозе >250 мг абсорбция резко падает. «Организм возьмёт 250 мг, остальное — сольёт» — биохимик Аллиярова" },
+              { icon: "✅", title: "Витамин D3 (1000–2000 МЕ)", desc: "Риск минимален при соблюдении доз. ⚠️ Но сначала — анализ крови." },
+              { icon: "✅", title: "Витамины группы B", desc: "Водорастворимые. Излишки выводятся. ⚠️ B1 и B6 взаимно разрушают друг друга." },
+              { icon: "✅", title: "Витамин C", desc: "При >250 мг абсорбция падает. «Организм возьмёт 250 мг, остальное — сольёт»" },
             ]}
           />
           <FlipCard
-            emoji="🟡"
-            zone="ЖЁЛТАЯ ЗОНА"
-            tagline="Будьте осторожны"
-            color="text-warning"
-            bgColor="bg-warning/20"
-            delay={0.15}
+            emoji="🟡" zone="ЖЁЛТАЯ ЗОНА" tagline="Будьте осторожны"
+            color="text-warning" bgColor="bg-warning/20" delay={0.15}
             items={[
-              { icon: "⚠️", title: "Жирорастворимые (A, D, E, K) в мегадозах", desc: "Аккумулируются в печени. Длительный приём высоких доз D → гиперкальцемия, кальциноз сосудов." },
-              { icon: "⚠️", title: "Apetamin (сироп для набора веса)", desc: "Содержит ципрогептадин — рецептурный препарат. Клинический кейс: острый гепатит, AST: 838 Ед/л, ALT: 997 Ед/л. Продаётся без рецепта." },
-              { icon: "⚠️", title: "Жиросжигатели со стимуляторами", desc: "Кофеин 200+ мг + синефрин + гуарана. L-карнитин → ТМАО → атеросклероз." },
+              { icon: "⚠️", title: "Жирорастворимые в мегадозах", desc: "Аккумулируются в печени. Высокие дозы D → гиперкальцемия." },
+              { icon: "⚠️", title: "Apetamin", desc: "Содержит ципрогептадин — рецептурный. Кейс: острый гепатит, AST: 838, ALT: 997." },
+              { icon: "⚠️", title: "Жиросжигатели", desc: "Кофеин 200+ мг + синефрин + гуарана. L-карнитин → ТМАО → атеросклероз." },
             ]}
           />
           <FlipCard
-            emoji="🔴"
-            zone="КРАСНАЯ ЗОНА"
-            tagline="Реальная угроза жизни"
-            color="text-destructive"
-            bgColor="bg-destructive/20"
-            delay={0.3}
+            emoji="🔴" zone="КРАСНАЯ ЗОНА" tagline="Реальная угроза жизни"
+            color="text-destructive" bgColor="bg-destructive/20" delay={0.3}
             items={[
-              { icon: "🚨", title: "«Молекула» и клоны (сибутрамин)", desc: "30-летняя женщина, Мангистауская обл. Цель: похудеть перед свадьбой. Результат: сердце остановилось на 5 минут. ИВЛ + аппарат кровообращения. Выжила." },
-              { icon: "🚨", title: "SARMs (Ligandrol, RAD-140, Ostarine)", desc: "FDA: «повышенный риск инфаркта, инсульта и рака печени». Продаются как «натуральные бустеры»." },
-              { icon: "🚨", title: "«Детокс-чаи» с сенной", desc: "Гастроэнтеролог Вялов: «~20 случаев печёночной недостаточности у молодых женщин. Один — летальный»." },
+              { icon: "🚨", title: "«Молекула» (сибутрамин)", desc: "30-летняя женщина. Цель: похудеть. Результат: сердце остановилось на 5 минут." },
+              { icon: "🚨", title: "SARMs (Ligandrol, RAD-140)", desc: "FDA: «повышенный риск инфаркта, инсульта и рака печени»." },
+              { icon: "🚨", title: "«Детокс-чаи» с сенной", desc: "~20 случаев печёночной недостаточности у молодых женщин. Один — летальный." },
             ]}
           />
         </div>
 
-        {/* Stats below */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0 }}
@@ -124,7 +111,6 @@ const DangerSection = () => {
           <p className="text-muted-foreground mb-2">Из 10 491 проверенного образца</p>
           <p className="text-5xl sm:text-6xl font-bold text-destructive font-body mb-2">{failCount}%</p>
           <p className="text-foreground text-lg">не соответствует стандартам безопасности.</p>
-          <p className="text-muted-foreground text-sm mt-2">Изъято 5,5 тонны продукции.</p>
         </motion.div>
       </div>
     </section>
