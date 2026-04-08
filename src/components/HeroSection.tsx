@@ -23,10 +23,8 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-background to-background" />
       
-      {/* Falling capsules */}
       <div className="absolute inset-0 pointer-events-none">
         {capsules.map((c) => (
           <div
@@ -46,7 +44,6 @@ const HeroSection = () => {
         ))}
       </div>
 
-      {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -71,21 +68,33 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="font-heading text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-10 leading-relaxed"
+          className="font-heading text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-8 leading-relaxed"
         >
           как нерегулируемый рынок БАДов убивает людей
         </motion.h2>
 
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.9 }}
-          className="text-base text-muted-foreground mb-10 font-body max-w-2xl mx-auto"
+          className="text-base text-muted-foreground mb-10 font-body max-w-3xl mx-auto space-y-4"
         >
-          Расследование о биологически активных добавках — от маркетинга до трагедий
-        </motion.p>
+          <p>
+            Вы принимаете БАДы? Если да, то эта статья может спасти вашу жизнь. 
+            Если нет — возможно, она убережёт вас от роковой ошибки.
+          </p>
+          <p>
+            Биологически активные добавки захватили мир. Они продаются в аптеках, 
+            супермаркетах, Instagram-магазинах. Их рекламируют блогеры, советуют подруги, 
+            иногда даже врачи.
+          </p>
+          <p className="text-foreground font-semibold">
+            Эта статья — не просто разоблачение. Это научное расследование того, как красивая 
+            упаковка и маркетинговые обещания превращают людей в жертв неконтролируемой 
+            индустрии, где прибыль важнее жизни.
+          </p>
+        </motion.div>
 
-        {/* Animated victim counter */}
         <motion.div
           ref={victimRef}
           initial={{ opacity: 0, scale: 0.8 }}
