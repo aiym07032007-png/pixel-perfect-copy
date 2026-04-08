@@ -12,6 +12,7 @@ const navItems = [
   { id: "elena", label: "Елена" },
   { id: "expert", label: "Эксперт" },
   { id: "metabody", label: "Альтернатива" },
+  { id: "chlorophyll", label: "Хлорофилл" },
   { id: "timeline", label: "Хронология" },
   { id: "protection", label: "Защита" },
 ];

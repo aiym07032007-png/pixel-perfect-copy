@@ -10,6 +10,7 @@ import GulmiraSection from "@/components/GulmiraSection";
 import ElenaSection from "@/components/ElenaSection";
 import ExpertSection from "@/components/ExpertSection";
 import MetabodySection from "@/components/MetabodySection";
+import ChlorophyllSection from "@/components/ChlorophyllSection";
 import TimelineSection from "@/components/TimelineSection";
 import ProtectionSection from "@/components/ProtectionSection";
 import EpilogueSection from "@/components/EpilogueSection";
@@ -29,6 +30,7 @@ const Index = () => (
     <ElenaSection />
     <ExpertSection />
     <MetabodySection />
+    <ChlorophyllSection />
     <TimelineSection />
     <ProtectionSection />
     <EpilogueSection />
