@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 const bars = [
-  { label: "Женщины принимают БАД", value: 72.8, color: "bg-primary" },
+  { label: "Женщины принимают БАД", value: 72.8, color: "bg-destructive" },
   { label: "По назначению врача", value: 43.1, color: "bg-success" },
-  { label: "Мужчины принимают БАД", value: 50.4, color: "bg-primary" },
+  { label: "Мужчины принимают БАД", value: 50.4, color: "bg-destructive/70" },
   { label: "По совету знакомых", value: 19.8, color: "bg-warning" },
   { label: "Самостоятельно (без врача)", value: 11.8, color: "bg-destructive" },
 ];
@@ -11,17 +11,21 @@ const bars = [
 const PhenomenonSection = () => (
   <section id="phenomenon" className="py-20 sm:py-28">
     <div className="section-container">
-      <motion.h2
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="section-title text-gradient-gold"
+        className="text-center mb-12"
       >
-        ФЕНОМЕН «ЗОЛОТОЙ ТАБЛЕТКИ»
-      </motion.h2>
+        <p className="text-destructive text-sm tracking-[0.3em] uppercase font-body font-semibold mb-4">
+          ГЛАВА IV · СОЦИОЛОГИЯ
+        </p>
+        <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
+          ФЕНОМЕН «ЗОЛОТОЙ ТАБЛЕТКИ»
+        </h2>
+      </motion.div>
 
       <div className="grid lg:grid-cols-2 gap-12">
-        {/* Left - text */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -37,7 +41,7 @@ const PhenomenonSection = () => (
           </p>
           <p>
             По данным Первого кредитного бюро, за 2024 год расходы граждан
-            РК на добавки составили <span className="text-primary font-semibold">152 млрд тенге</span> — в пять раз больше,
+            РК на добавки составили <span className="text-destructive font-semibold">152 млрд тенге</span> — в пять раз больше,
             чем годом ранее.
           </p>
           <p>
@@ -48,7 +52,6 @@ const PhenomenonSection = () => (
           </p>
         </motion.div>
 
-        {/* Right - bar chart */}
         <div>
           <h3 className="font-heading text-lg text-foreground mb-6">Социология потребления</h3>
           <div className="space-y-4">
@@ -62,7 +65,7 @@ const PhenomenonSection = () => (
               >
                 <div className="flex justify-between text-sm mb-1">
                   <span className="text-foreground">{bar.label}</span>
-                  <span className="text-primary font-semibold">{bar.value}%</span>
+                  <span className="text-destructive font-semibold">{bar.value}%</span>
                 </div>
                 <div className="h-3 bg-secondary rounded-full overflow-hidden">
                   <motion.div
@@ -86,8 +89,7 @@ const PhenomenonSection = () => (
           >
             <p className="text-sm text-foreground">
               ⚠️ <strong>11,8%</strong> — это люди, принимающие решения без врача,
-              основываясь на советах блогеров. Именно здесь —
-              самые тяжёлые случаи токсического поражения организма.
+              основываясь на советах блогеров.
             </p>
           </motion.div>
         </div>

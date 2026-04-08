@@ -28,9 +28,9 @@ const EpilogueSection = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="section-title text-center text-gradient-gold"
+        className="section-title text-center text-destructive"
       >
-        ВАША ЕДИНСТВЕННАЯ ЗАЩИТА
+        ЭПИЛОГ
       </motion.h2>
 
       <div className="grid md:grid-cols-3 gap-6 mb-16">
@@ -43,8 +43,8 @@ const EpilogueSection = () => (
             transition={{ delay: i * 0.2, duration: 0.7, type: "spring" }}
             className="bg-card border border-border rounded-xl p-8 text-center"
           >
-            <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
-              <span className="text-primary font-bold text-xl font-body">{rule.num}</span>
+            <div className="w-12 h-12 rounded-full bg-destructive/20 flex items-center justify-center mx-auto mb-4">
+              <span className="text-destructive font-bold text-xl font-body">{rule.num}</span>
             </div>
             <h3 className="font-heading text-lg font-bold text-foreground mb-3">{rule.title}</h3>
             <p className="text-muted-foreground text-sm">{rule.desc}</p>
@@ -52,7 +52,6 @@ const EpilogueSection = () => (
         ))}
       </div>
 
-      {/* Final callout */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -63,19 +62,14 @@ const EpilogueSection = () => (
         <p className="text-muted-foreground text-base leading-relaxed">
           Казахстан. 2025–2026.
           <br />
-          Рынок вырос в <span className="text-primary font-bold">×5</span> за год.
+          Рынок вырос в <span className="text-destructive font-bold">×5</span> за год.
           <br />
           <span className="text-destructive font-bold">31%</span> образцов не соответствуют стандартам.
-          <br />
-          Молодая женщина едва не умерла от «натуральных» таблеток.
           <br />
           Заблокировано <span className="text-destructive font-bold">9</span> аккаунтов из 838 нарушителей.
         </p>
         <p className="text-foreground font-heading text-xl font-bold mt-6">
           Расследование продолжается.
-        </p>
-        <p className="text-primary font-heading italic">
-          Результаты эксперимента с хлорофиллом — скоро.
         </p>
       </motion.div>
     </div>
