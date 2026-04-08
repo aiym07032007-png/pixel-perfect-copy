@@ -1,17 +1,20 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useMemo } from "react";
+import { useCountUp } from "./useCountUp";
 
-const capsuleColors = ["#E53E3E", "#F6E05E", "#38A169", "#4299E1", "#DD6B20", "#9F7AEA"];
+const capsuleColors = ["#e63946", "#f4a261", "#2a9d8f", "#457b9d", "#e76f51", "#9b2226"];
 
 const HeroSection = () => {
+  const { count: victimCount, ref: victimRef } = useCountUp(23000, 2000);
+
   const capsules = useMemo(
     () =>
-      Array.from({ length: 20 }, (_, i) => ({
+      Array.from({ length: 25 }, (_, i) => ({
         id: i,
         color: capsuleColors[i % capsuleColors.length],
         left: `${Math.random() * 100}%`,
-        width: 12 + Math.random() * 20,
+        width: 10 + Math.random() * 18,
         duration: 6 + Math.random() * 10,
         delay: Math.random() * 8,
       })),
@@ -20,12 +23,15 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-background to-background" />
+      
       {/* Falling capsules */}
       <div className="absolute inset-0 pointer-events-none">
         {capsules.map((c) => (
           <div
             key={c.id}
-            className="absolute capsule-fall rounded-full opacity-60"
+            className="absolute capsule-fall rounded-full opacity-40"
             style={{
               left: c.left,
               top: "-60px",
@@ -42,38 +48,58 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-destructive text-sm tracking-[0.3em] uppercase font-body font-semibold mb-6"
+        >
+          ЖУРНАЛИСТСКОЕ РАССЛЕДОВАНИЕ
+        </motion.div>
+
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="section-title text-5xl sm:text-6xl lg:text-7xl !mb-4 text-gradient-gold"
+          className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 text-foreground leading-tight"
         >
-          ЗОЛОТАЯ КАПСУЛА
+          ОПАСНАЯ{" "}
+          <span className="text-destructive">ДОБАВКА</span>
         </motion.h1>
+        
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="font-heading text-2xl sm:text-3xl lg:text-4xl text-foreground mb-8"
+          className="font-heading text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-10 leading-relaxed"
         >
-          АНАТОМИЯ КАЗАХСТАНСКОГО ОБМАНА
+          как нерегулируемый рынок БАДов убивает людей
         </motion.h2>
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.9 }}
-          className="text-lg sm:text-xl text-muted-foreground mb-4 font-body"
+          className="text-base text-muted-foreground mb-10 font-body max-w-2xl mx-auto"
         >
-          Иллюзия исцеления: как казахстанцы тратят миллиарды на риск в красивой упаковке
+          Расследование о биологически активных добавках — от маркетинга до трагедий
         </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.1 }}
-          className="text-base text-muted-foreground mb-12 font-body"
+
+        {/* Animated victim counter */}
+        <motion.div
+          ref={victimRef}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="mb-10"
         >
-          От витаминного дефицита до реанимации. Расследование того, как индустрия БАДов в Казахстане стала неуправляемой
-        </motion.p>
+          <p className="text-5xl sm:text-6xl font-bold text-destructive font-body">
+            {victimCount.toLocaleString()}+
+          </p>
+          <p className="text-muted-foreground text-sm mt-2">
+            случаев побочных эффектов от БАДов ежегодно регистрируется FDA
+          </p>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -82,19 +108,17 @@ const HeroSection = () => {
           className="quote-block max-w-2xl mx-auto text-left mb-16"
         >
           <p className="text-base sm:text-lg">
-            «Среди тех, кто принимает по 15–16 БАДов в день, есть пациенты,
-            которые через время попадают в больницу с токсическим гепатитом.
-            Они считали всё это безвредным.»
+            «Ежегодно от некачественных БАДов в мире страдают миллионы людей.
+            Казахстан — не исключение.»
           </p>
-          <p className="text-sm mt-3 text-muted-foreground not-italic">— Елена Павловна, инфекционист</p>
         </motion.div>
 
         <motion.a
-          href="#stats"
+          href="#what-is-bad"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2 }}
-          className="inline-flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group cursor-pointer"
+          className="inline-flex flex-col items-center gap-2 text-muted-foreground hover:text-destructive transition-colors group cursor-pointer"
         >
           <span className="text-sm opacity-0 group-hover:opacity-100 transition-opacity">Листайте вниз</span>
           <ChevronDown className="w-8 h-8 bounce-arrow" />
