@@ -1,13 +1,17 @@
 import StickyNav from "@/components/StickyNav";
 import HeroSection from "@/components/HeroSection";
+import WhatIsBadSection from "@/components/WhatIsBadSection";
 import StatsSection from "@/components/StatsSection";
 import WorldMapSection from "@/components/WorldMapSection";
 import PhenomenonSection from "@/components/PhenomenonSection";
 import PriceSection from "@/components/PriceSection";
 import DangerSection from "@/components/DangerSection";
-import FamilySection from "@/components/FamilySection";
-import LegalSection from "@/components/LegalSection";
-import RegulatorSection from "@/components/RegulatorSection";
+import GulmiraSection from "@/components/GulmiraSection";
+import ElenaSection from "@/components/ElenaSection";
+import ExpertSection from "@/components/ExpertSection";
+import MetabodySection from "@/components/MetabodySection";
+import TimelineSection from "@/components/TimelineSection";
+import ProtectionSection from "@/components/ProtectionSection";
 import EpilogueSection from "@/components/EpilogueSection";
 import SourcesSection from "@/components/SourcesSection";
 
@@ -15,14 +19,18 @@ const Index = () => (
   <div className="min-h-screen bg-background">
     <StickyNav />
     <HeroSection />
+    <WhatIsBadSection />
     <StatsSection />
     <WorldMapSection />
     <PhenomenonSection />
     <PriceSection />
     <DangerSection />
-    <FamilySection />
-    <LegalSection />
-    <RegulatorSection />
+    <GulmiraSection />
+    <ElenaSection />
+    <ExpertSection />
+    <MetabodySection />
+    <TimelineSection />
+    <ProtectionSection />
     <EpilogueSection />
     <SourcesSection />
   </div>

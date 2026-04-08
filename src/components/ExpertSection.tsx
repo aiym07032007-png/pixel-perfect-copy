@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import AudioPlayer from "./AudioPlayer";
 import ExpertQuote from "./ExpertQuote";
+import VideoEmbed from "./VideoEmbed";
 
 const ExpertSection = () => (
   <section id="expert" className="py-20 sm:py-28 relative">
@@ -23,17 +24,14 @@ const ExpertSection = () => (
       </motion.div>
 
       <div className="max-w-3xl mx-auto space-y-8">
-        {/* Expert quote */}
         <ExpertQuote
           author="Елена Павлова"
           role="Инфекционист"
           quote="Среди тех, кто принимает по 15–16 БАДов в день, есть пациенты, которые через время попадают в больницу с токсическим гепатитом. Они считали всё это безвредным."
         />
 
-        {/* Audio */}
         <AudioPlayer label="Аудио-комментарий инфекциониста Елены Павловой о БАДах — будет добавлено" />
 
-        {/* Expert opinion placeholder */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -51,21 +49,13 @@ const ExpertSection = () => (
           </div>
         </motion.div>
 
-        {/* Video */}
-        <VideoEmbedInline />
+        <VideoEmbed
+          label="Видео-комментарий Елены Павловой"
+          src="/media/video-interview-2.mp4"
+        />
       </div>
     </div>
   </section>
 );
-
-const VideoEmbedInline = () => {
-  const VideoEmbed = require("./VideoEmbed").default;
-  return (
-    <VideoEmbed
-      label="Видео-комментарий Елены Павловой — будет добавлено"
-      src="/media/video-interview-2.mp4"
-    />
-  );
-};
 
 export default ExpertSection;
