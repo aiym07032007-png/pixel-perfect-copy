@@ -8,6 +8,7 @@ const navItems = [
   { id: "phenomenon", label: "Феномен" },
   { id: "price", label: "Цена" },
   { id: "danger", label: "Опасность" },
+  { id: "legal", label: "Закон" },
   { id: "gulmira", label: "Гульмира" },
   { id: "elena", label: "Елена" },
   { id: "expert", label: "Эксперт" },

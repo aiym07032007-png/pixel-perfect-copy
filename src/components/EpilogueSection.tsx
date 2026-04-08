@@ -1,63 +1,44 @@
 import { motion } from "framer-motion";
 
-const rules = [
-  {
-    num: "1",
-    title: "НИ ОДИН БАД — БЕЗ АНАЛИЗА КРОВИ",
-    desc: "«Всем нужен магний» — это маркетинг, не медицина.",
-    direction: { x: -60 },
-  },
-  {
-    num: "2",
-    title: "ПРОВЕРЯЙТЕ РЕЕСТР ЕАЭС",
-    desc: "Нет в реестре = контрабанда, независимо от красоты упаковки.",
-    direction: { x: 60 },
-  },
-  {
-    num: "3",
-    title: "«НАТУРАЛЬНО» ≠ «БЕЗОПАСНО»",
-    desc: "Цианид — тоже натуральный. Яд бледной поганки — органический.",
-    direction: { y: 60 },
-  },
-];
-
 const EpilogueSection = () => (
-  <section id="epilogue" className="py-20 sm:py-28">
-    <div className="section-container">
-      <motion.h2
+  <section id="epilogue" className="py-20 sm:py-28 relative">
+    <div className="absolute inset-0 bg-gradient-to-b from-background via-destructive/5 to-[#0a0a0a] opacity-30" />
+    
+    <div className="section-container relative z-10">
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="section-title text-center text-destructive"
+        className="text-center mb-12"
       >
-        ЭПИЛОГ
-      </motion.h2>
-
-      <div className="grid md:grid-cols-3 gap-6 mb-16">
-        {rules.map((rule, i) => (
-          <motion.div
-            key={rule.num}
-            initial={{ opacity: 0, ...rule.direction }}
-            whileInView={{ opacity: 1, x: 0, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.2, duration: 0.7, type: "spring" }}
-            className="bg-card border border-border rounded-xl p-8 text-center"
-          >
-            <div className="w-12 h-12 rounded-full bg-destructive/20 flex items-center justify-center mx-auto mb-4">
-              <span className="text-destructive font-bold text-xl font-body">{rule.num}</span>
-            </div>
-            <h3 className="font-heading text-lg font-bold text-foreground mb-3">{rule.title}</h3>
-            <p className="text-muted-foreground text-sm">{rule.desc}</p>
-          </motion.div>
-        ))}
-      </div>
+        <h2 className="section-title text-destructive">ЭПИЛОГ</h2>
+      </motion.div>
 
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.6, duration: 1 }}
-        className="max-w-2xl mx-auto text-center space-y-3"
+        className="max-w-3xl mx-auto space-y-6 text-muted-foreground text-base leading-relaxed mb-12"
+      >
+        <p>
+          Индустрия БАДов построена на <strong className="text-foreground">страхе, невежестве и жадности</strong>. 
+          Страхе потребителей перед болезнью. Невежестве регуляторов. Жадности производителей.
+        </p>
+        <p>
+          Система не защитит вас. Врачи перегружены. Регуляторы бессильны. 
+          Instagram заблокирует 1% нарушителей и будет считать это победой.
+        </p>
+        <p className="text-foreground font-semibold text-lg">
+          Но у вас есть оружие — информация.
+        </p>
+      </motion.div>
+
+      {/* Final stats */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        className="max-w-2xl mx-auto text-center space-y-3 mb-12"
       >
         <p className="text-muted-foreground text-base leading-relaxed">
           Казахстан. 2025–2026.
@@ -68,10 +49,55 @@ const EpilogueSection = () => (
           <br />
           Заблокировано <span className="text-destructive font-bold">9</span> аккаунтов из 838 нарушителей.
         </p>
-        <p className="text-foreground font-heading text-xl font-bold mt-6">
-          Расследование продолжается.
-        </p>
       </motion.div>
+
+      {/* Final message */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3 }}
+        className="max-w-2xl mx-auto"
+      >
+        <div className="quote-block text-center">
+          <p className="text-lg sm:text-xl">
+            БАДы не сделают вас здоровее. Но они могут сделать вас беднее.{" "}
+            <span className="text-destructive font-bold">Или убить.</span>
+          </p>
+          <p className="text-foreground font-semibold mt-4">
+            Выбор за вами. Теперь вы знаете правду.
+          </p>
+        </div>
+      </motion.div>
+
+      {/* CTA */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.6 }}
+        className="mt-12 text-center"
+      >
+        <div className="bg-card border border-destructive/30 rounded-xl p-6 max-w-xl mx-auto">
+          <p className="text-foreground font-heading font-bold text-lg mb-2">
+            📩 Свяжитесь с нами
+          </p>
+          <p className="text-muted-foreground text-sm">
+            Если вы пострадали от БАДов или знаете тех, кто пострадал — свяжитесь с нами. 
+            Ваша история может спасти других.
+          </p>
+        </div>
+      </motion.div>
+
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.8 }}
+        className="text-center font-heading text-xl font-bold text-foreground mt-8"
+      >
+        Расследование продолжается.
+      </motion.p>
     </div>
   </section>
 );

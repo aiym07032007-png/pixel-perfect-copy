@@ -18,7 +18,7 @@ const PhenomenonSection = () => (
         className="text-center mb-12"
       >
         <p className="text-destructive text-sm tracking-[0.3em] uppercase font-body font-semibold mb-4">
-          ГЛАВА IV · СОЦИОЛОГИЯ
+          СОЦИОЛОГИЯ
         </p>
         <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
           ФЕНОМЕН «ЗОЛОТОЙ ТАБЛЕТКИ»
@@ -40,9 +40,15 @@ const PhenomenonSection = () => (
             вечной молодости.
           </p>
           <p>
+            Пандемия COVID-19 породила <span className="text-destructive font-semibold">«коллективный страх смерти»</span>. 
+            Витамины C, D и цинк сметались с полок. Страх — самый лучший маркетолог. 
+            И индустрия БАДов это прекрасно знает.
+          </p>
+          <p>
             По данным Первого кредитного бюро, за 2024 год расходы граждан
             РК на добавки составили <span className="text-destructive font-semibold">152 млрд тенге</span> — в пять раз больше,
-            чем годом ранее.
+            чем годом ранее. Причём <strong className="text-foreground">11,8%</strong> делают это без консультации врача, 
+            основываясь на советах из Instagram.
           </p>
           <p>
             Рынок растёт быстрее любой другой отрасли потребления.
