@@ -38,7 +38,7 @@ const WhatIsBadSection = () => (
         className="text-center mb-6"
       >
         <p className="text-destructive text-sm tracking-[0.3em] uppercase font-body font-semibold mb-4">
-          ГЛАВА I · ОПРЕДЕЛЕНИЕ
+          ГЛАВА III · ОПРЕДЕЛЕНИЕ
         </p>
         <h2 className="section-title">
           <span className="text-destructive">БАД — ЭТО НЕ ЛЕКАРСТВО</span>
