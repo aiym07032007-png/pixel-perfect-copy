@@ -2,20 +2,18 @@ import { useState, useEffect } from "react";
 
 const navItems = [
   { id: "hero", label: "Обложка" },
+  { id: "mangystau", label: "Трагедия" },
+  { id: "gulmira", label: "Семья" },
   { id: "what-is-bad", label: "Что такое БАД" },
   { id: "stats", label: "Статистика" },
   { id: "world-map", label: "Карта" },
-  { id: "phenomenon", label: "Феномен" },
   { id: "price", label: "Цена" },
   { id: "danger", label: "Опасность" },
   { id: "legal", label: "Закон" },
-  { id: "gulmira", label: "Гульмира" },
-  { id: "elena", label: "Елена" },
+  { id: "elena", label: "Индустрия" },
   { id: "expert", label: "Эксперт" },
-  { id: "metabody", label: "Альтернатива" },
-  { id: "chlorophyll", label: "Хлорофилл" },
-  { id: "timeline", label: "Хронология" },
   { id: "protection", label: "Защита" },
+  { id: "chlorophyll", label: "Эксперимент" },
 ];
 
 const StickyNav = () => {

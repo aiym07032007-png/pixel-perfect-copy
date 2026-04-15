@@ -25,7 +25,7 @@ const LegalSection = () => {
           className="text-center mb-6"
         >
           <p className="text-destructive text-sm tracking-[0.3em] uppercase font-body font-semibold mb-4">
-            ГЛАВА V · ЮРИСПРУДЕНЦИЯ
+            ГЛАВА VII · ЮРИСПРУДЕНЦИЯ
           </p>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-2">
             ЮРИДИЧЕСКАЯ ПРОПАСТЬ

@@ -64,7 +64,7 @@ const DangerSection = () => {
           className="text-center mb-6"
         >
           <p className="text-destructive text-sm tracking-[0.3em] uppercase font-body font-semibold mb-4">
-            ГЛАВА IV · СВЕТОФОР СМЕРТИ
+            ГЛАВА VI · СВЕТОФОР СМЕРТИ
           </p>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-2">
             КЛАССИФИКАЦИЯ БАДОВ ПО ОПАСНОСТИ

@@ -15,7 +15,7 @@ const ExpertSection = () => (
         className="text-center mb-12"
       >
         <p className="text-destructive text-sm tracking-[0.3em] uppercase font-body font-semibold mb-4">
-          ГЛАВА VI · МНЕНИЕ ЭКСПЕРТА
+          ГЛАВА IX · МНЕНИЕ ЭКСПЕРТА
         </p>
         <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
           ЕЛЕНА ПАВЛОВА
