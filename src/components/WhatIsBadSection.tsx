@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { Pill, FlaskConical, HeartPulse, ShieldAlert, FileCheck } from "lucide-react";
-import badsProducts from "@/assets/bads-products.jpg";
-import rastoropsha from "@/assets/rastoropsha.jpg";
 
 const badTypes = [
   {
@@ -81,32 +79,6 @@ const WhatIsBadSection = () => (
             <p className="text-muted-foreground text-sm">{type.desc}</p>
           </motion.div>
         ))}
-      </div>
-
-      {/* Photo block */}
-      <div className="grid md:grid-cols-2 gap-6 mb-16">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="rounded-xl overflow-hidden border border-border"
-        >
-          <img src={badsProducts} alt="Продукция БАДов Новая Эра" className="w-full h-64 object-cover" />
-          <div className="p-3 bg-card">
-            <p className="text-xs text-muted-foreground">Продукция «Новая Эра» — типичные БАДы на казахстанском рынке</p>
-          </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="rounded-xl overflow-hidden border border-border"
-        >
-          <img src={rastoropsha} alt="Рекламный материал БАДов" className="w-full h-64 object-cover" />
-          <div className="p-3 bg-card">
-            <p className="text-xs text-muted-foreground">Рекламные обещания: «профилактика», «восстановление», «снижение» — без доказательств</p>
-          </div>
-        </motion.div>
       </div>
 
       {/* BAD vs Medicine - critical difference */}

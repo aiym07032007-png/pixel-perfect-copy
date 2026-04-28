@@ -90,6 +90,20 @@ const MetabodySection = () => (
         </motion.div>
       </div>
 
+      {/* Website screenshot */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="max-w-4xl mx-auto mb-12 rounded-xl overflow-hidden border-2 border-border bg-card"
+      >
+        <img
+          src="/media/metabody-screenshot.png"
+          alt="Скриншот сайта Metabody"
+          className="w-full h-auto"
+        />
+      </motion.div>
+
       {/* Metabody info */}
       <motion.div
         initial={{ opacity: 0 }}

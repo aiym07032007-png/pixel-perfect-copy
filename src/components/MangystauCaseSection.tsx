@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Heart, AlertTriangle, Clock, ChevronDown, ChevronUp } from "lucide-react";
+import { Heart, AlertTriangle, ExternalLink, Clock, ChevronDown, ChevronUp } from "lucide-react";
 
 const timeline = [
   { time: "День 1", icon: "💊", text: "Купила «Молекулу» в Instagram. Хотела похудеть к свадьбе." },
@@ -125,13 +125,30 @@ const MangystauCaseSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center"
+        className="text-center"
         >
           <p className="text-muted-foreground text-lg max-w-xl mx-auto italic">
             Она хотела быть красивой на своей свадьбе.<br />
             Вместо этого — неделя на грани жизни и смерти.<br />
             <span className="text-destructive font-semibold">А продавец «Молекулы» до сих пор работает.</span>
           </p>
+
+        <div className="max-w-xl mx-auto mt-6">
+          <a
+            href="https://youtu.be/MNcC416dves?si=Gj0skPZsfvZb2YuB"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center justify-between gap-4 rounded-2xl border border-destructive/30 bg-destructive/5 px-5 py-4 text-left transition-colors hover:bg-destructive/10"
+          >
+            <div>
+              <p className="text-foreground font-semibold">Посмотреть источник</p>
+              <p className="text-sm text-muted-foreground">
+                Видео-источник по этой истории на YouTube
+              </p>
+            </div>
+            <ExternalLink className="w-5 h-5 text-destructive flex-shrink-0" />
+          </a>
+        </div>
         </motion.div>
       </div>
     </section>

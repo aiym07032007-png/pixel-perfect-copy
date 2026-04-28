@@ -19,6 +19,44 @@ const bloodTests = [
   { name: "СРБ (С-реактивный белок)", desc: "маркер воспаления" },
 ];
 
+const diaryEntries = [
+  {
+    day: "День 1",
+    energy: "как обычно, без изменений",
+    sleep: "засыпала долго",
+    skin: "без изменений с прыщами",
+    mood: "нейтральное, скептичная",
+  },
+  {
+    day: "День 7",
+    energy: "чуть бодрее с утра",
+    sleep: "стала засыпать быстрее",
+    skin: "небольшое высыпание на лбу",
+    mood: "немного лучше",
+  },
+  {
+    day: "День 14",
+    energy: "заметно бодрее днём",
+    sleep: "сплю глубже, просыпаюсь легче",
+    skin: "высыпание прошло, тон ровнее",
+    mood: "позитивнее, меньше раздражения",
+  },
+  {
+    day: "День 21",
+    energy: "стабильная, нет спада после обеда",
+    sleep: "отличный, 7-8 часов без пробуждений",
+    skin: "заметно чище, меньше жирности",
+    mood: "спокойное, сосредоточенная",
+  },
+  {
+    day: "День 30",
+    energy: "высокая, хочется двигаться",
+    sleep: "стабильно хороший",
+    skin: "самое заметное улучшение за месяц",
+    mood: "сильных изменений нет",
+  },
+];
+
 const ChlorophyllSection = () => {
   const [showProtocol, setShowProtocol] = useState(false);
   const [showDiary, setShowDiary] = useState(false);
@@ -217,19 +255,29 @@ const ChlorophyllSection = () => {
               className="mt-3 p-6 rounded-xl bg-card border border-border"
             >
               <div className="space-y-3">
-                {["День 1", "День 7", "День 14", "День 21", "День 30"].map((day, i) => (
-                  <div key={i} className="p-4 rounded-lg border border-border bg-muted/10">
+                {diaryEntries.map((entry) => (
+                  <div key={entry.day} className="p-4 rounded-lg border border-border bg-muted/10">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="font-bold text-sm text-foreground">{day}</span>
-                      <span className="text-xs text-muted-foreground/50">📝 будет заполнено</span>
+                      <span className="font-bold text-sm text-foreground">{entry.day}</span>
+                      <span className="text-xs text-[hsl(152,56%,39%)]/80">📝 заполнено</span>
                     </div>
-                    <div className="grid grid-cols-4 gap-2 text-center">
-                      {["Энергия", "Сон", "Кожа", "Настроение"].map((metric) => (
-                        <div key={metric} className="text-xs">
-                          <p className="text-muted-foreground/60">{metric}</p>
-                          <p className="text-foreground mt-1">—</p>
-                        </div>
-                      ))}
+                    <div className="grid sm:grid-cols-2 gap-3 text-left">
+                      <div className="text-xs">
+                        <p className="text-muted-foreground/60">Энергия</p>
+                        <p className="text-foreground mt-1">{entry.energy}</p>
+                      </div>
+                      <div className="text-xs">
+                        <p className="text-muted-foreground/60">Сон</p>
+                        <p className="text-foreground mt-1">{entry.sleep}</p>
+                      </div>
+                      <div className="text-xs">
+                        <p className="text-muted-foreground/60">Кожа</p>
+                        <p className="text-foreground mt-1">{entry.skin}</p>
+                      </div>
+                      <div className="text-xs">
+                        <p className="text-muted-foreground/60">Настроение</p>
+                        <p className="text-foreground mt-1">{entry.mood}</p>
+                      </div>
                     </div>
                   </div>
                 ))}

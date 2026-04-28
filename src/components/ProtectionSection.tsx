@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Shield, Check } from "lucide-react";
+import { Shield } from "lucide-react";
 
 const rules = [
   {
@@ -20,15 +20,6 @@ const rules = [
     desc: "Цианид тоже натуральный. Аконит — это растение. Яд бледной поганки — органический. Слово «натуральный» в рекламе БАДов не означает ровным счётом ничего. Это маркетинговый термин без юридического содержания.",
     emoji: "☠️",
   },
-];
-
-const checklist = [
-  "Проверяй наличие свидетельства государственной регистрации",
-  "Не покупай БАДы без консультации врача при хронических болезнях",
-  "Остерегайся обещаний «вылечить» болезни — БАД не лекарство",
-  "Проверяй производителя и сертификаты",
-  "Сообщай о побочных эффектах в Комитет охраны здоровья МЗ РК",
-  "Используй официальные аптеки и зарегистрированные магазины",
 ];
 
 const ProtectionSection = () => (
@@ -74,29 +65,6 @@ const ProtectionSection = () => (
         ))}
       </div>
 
-      {/* Checklist */}
-      <div className="max-w-2xl mx-auto">
-        <h3 className="font-heading text-xl font-bold text-foreground text-center mb-6">
-          ✅ Чеклист безопасности
-        </h3>
-        <div className="space-y-3">
-          {checklist.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="flex items-start gap-4 bg-card border border-border rounded-xl p-4 hover:border-success/30 transition-colors"
-            >
-              <div className="w-7 h-7 rounded-full bg-success/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <Check className="w-4 h-4 text-success" />
-              </div>
-              <p className="text-foreground text-sm leading-relaxed">{item}</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
     </div>
   </section>
 );
